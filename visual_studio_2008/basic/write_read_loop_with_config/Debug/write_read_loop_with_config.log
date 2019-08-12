@@ -1,4 +1,4 @@
 ﻿  cl : Command line warning D9035 : option 'Gm' has been deprecated and will be removed in a future release
   write_read_loop_with_config.c
-D:\Work\Test\C_C++_LJM_2019-03-27\LJM_Utilities.h(715,33): warning C4244:  'return': conversion from '__int64' to 'unsigned int', possible loss of data
-  write_read_loop_with_config.vcxproj -> D:\Work\Test\C_C++_LJM_2019-03-27\visual_studio_2008\basic\write_read_loop_with_config\Debug\write_read_loop_with_config.exe
+C:\Users\Peerapong Pimup\Documents\GitHub\LabJack-c\LJM_Utilities.h(715,33): warning C4244:  'return': conversion from '__int64' to 'unsigned int', possible loss of data
+  write_read_loop_with_config.vcxproj -> C:\Users\Peerapong Pimup\Documents\GitHub\LabJack-c\visual_studio_2008\basic\write_read_loop_with_config\Debug\write_read_loop_with_config.exe
