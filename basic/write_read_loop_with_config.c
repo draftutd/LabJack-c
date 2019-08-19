@@ -1,10 +1,30 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <LabJackM.h>
 #include "../LJM_Utilities.h"
+#include <mysql.h>
+#define MAX_STRING 128
+
+
 int main()
 {   
+	MYSQL* conn;
+	MYSQL_RES* res;
+	MYSQL_ROW row;
+	char* server = "localhost";
+	char* user = "root";
+	char* password = "0857351137"; /* set me first */
+	char* database = "data_all";
+	int qstate;
+	conn = mysql_init(NULL);
+	/* Connect to database */
+	if (!mysql_real_connect(conn, server,user, password, database, 3306, NULL, 0)) {
+		fprintf(stderr, "%s\n", mysql_error(conn));
+		exit(1);
+	}
+	printf("MySQL Tables in mysql database:\n");
 	int hours, minutes, seconds, day, month, year;
 	int err;
 	int handle;
@@ -55,6 +75,17 @@ int main()
 		printf(" %s = %.4f  ", aNames[0], aValues[0]);
 		printf(" %s = %.4f  ", aNames[1], aValues[1]);
 		printf(" %s = %.4f  ", aNames[2], aValues[2]);
+
+		char query[1024] = { 0 };
+		char fog1[] = "18/08/2562";
+		char fog2[] = "22:58";
+		sprintf(query, "INSERT INTO data_log (date_data, time_data, DATA_1, DATA_2, DATA_3) VALUES('%s', '%s', 15.4, 14.5, 16.5)", fog1, fog2);
+		qstate = mysql_query(conn, query);
+		if (!qstate)
+		{
+			printf("Successful");
+		}
+
 		err = LJM_WaitForNextInterval(INTERVAL_HANDLE, &skippedIntervals);
 		ErrorCheck(err, "LJM_WaitForNextInterval");
 		printf("\n");
@@ -67,6 +98,9 @@ int main()
 	ErrorCheck(err, "LJM_Close");
 
 	WaitForUserIfWindows();
-
+	/* close connection */
+	mysql_close(conn);
 	return LJME_NOERROR;
-}
+
+
+	}

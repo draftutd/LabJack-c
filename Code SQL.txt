@@ -1,0 +1,22 @@
+SELECT * FROM data_all.data_log;
+
+INSERT INTO data_log (date,time,DATA_1,DATA_2,DATA_3) VALUES ('18/08/2562','11:55',15.4,14.5,16.5)
+
+ALTER TABLE data_log AUTO_INCREMENT = 1;
+
+DELETE FROM data_log WHERE id=9
+
+CREATE DATABASE data_all;
+USE data_all;
+CREATE TABLE data_log (
+   id INT NOT NULL AUTO_INCREMENT,
+  date_data VARCHAR(45) NOT NULL,
+  time_data VARCHAR(45) NOT NULL,
+  data_1 FLOAT NULL,
+  data_2 FLOAT NULL,
+  data_3 FLOAT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO data_log (date_data,time_data,DATA_1,DATA_2,DATA_3) VALUES ('18/08/2562','11:55',15.4,14.5,16.5);
+INSERT INTO data_log (date_data,time_data,DATA_1,DATA_2,DATA_3) VALUES ('18/08/2562','11:55',16.4,15.5,17.5);
+INSERT INTO data_log (date_data,time_data,DATA_1,DATA_2,DATA_3) VALUES ('18/08/2562','11:55',17.4,16.5,18.5)
