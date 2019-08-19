@@ -37,7 +37,7 @@ int main()
 	const int INTERVAL_HANDLE = 1;
 	int it = 0;
 	int msDelay = 500;
-	enum { MAX_FRAMES = 2 };
+	enum { MAX_FRAMES = 3 };
 	int numFrames;
 	char * aNames[MAX_FRAMES];
 	double aValues[MAX_FRAMES];
@@ -71,19 +71,27 @@ int main()
 			&errorAddress);
 		ErrorCheckWithAddress(err, errorAddress, "LJM_eReadNames");
 		printf("Date is : %02d/%02d/%d ", day, month, year);
-		printf("Time is : %02d:%02d:%02d am ", hours, minutes, seconds);
+		printf("Time is : %02d:%02d:%02d ", hours, minutes, seconds);
 		printf(" %s = %.4f  ", aNames[0], aValues[0]);
 		printf(" %s = %.4f  ", aNames[1], aValues[1]);
 		printf(" %s = %.4f  ", aNames[2], aValues[2]);
-
+		float data_1 = aValues[0];
+		float data_2 = aValues[1];
+		float data_3 = aValues[2];
 		char query[1024] = { 0 };
-		char fog1[] = "18/08/2562";
-		char fog2[] = "22:58";
-		sprintf(query, "INSERT INTO data_log (date_data, time_data, DATA_1, DATA_2, DATA_3) VALUES('%s', '%s', 15.4, 14.5, 16.5)", fog1, fog2);
+		char data_date[1024] = { 0 };
+		char data_time[1024] = { 0 };
+		char data1[1024] = { 0 };
+		char data2[1024] = { 0 };
+		char data3[1024] = { 0 };
+		sprintf(data_date, "%02d/%02d/%d", day, month, year);
+		sprintf(data_date, "%02d:%02d:%02d", hours, minutes, seconds);
+		
+		sprintf(query, "INSERT INTO data_log (date_data, time_data, DATA_1, DATA_2, DATA_3) VALUES('%s', '%s', %.4f, %.4f, %.4f)", data_date, data_date, data_1, data_2, data_3);
 		qstate = mysql_query(conn, query);
 		if (!qstate)
 		{
-			printf("Successful");
+			printf(" Successful");
 		}
 
 		err = LJM_WaitForNextInterval(INTERVAL_HANDLE, &skippedIntervals);
