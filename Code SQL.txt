@@ -4,7 +4,7 @@ INSERT INTO data_log (date,time,DATA_1,DATA_2,DATA_3) VALUES ('18/08/2562','11:5
 
 ALTER TABLE data_log AUTO_INCREMENT = 1;
 
-DELETE FROM data_log WHERE id=9
+DELETE FROM data_log WHERE id>=0;
 
 CREATE DATABASE data_all;
 USE data_all;
