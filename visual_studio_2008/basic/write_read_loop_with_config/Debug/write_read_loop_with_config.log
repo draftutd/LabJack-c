@@ -1,11 +1,3 @@
-﻿  cl : Command line warning D9035 : option 'Gm' has been deprecated and will be removed in a future release
-  write_read_loop_with_config.c
-C:\Users\draft\Documents\GitHub\LabJack-c\LJM_Utilities.h(715,33): warning C4244:  'return': conversion from '__int64' to 'unsigned int', possible loss of data
-C:\Users\draft\Documents\GitHub\LabJack-c\basic\write_read_loop_with_config.c(38,1): warning C4996:  'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h(506): message :  see declaration of 'localtime'
-C:\Users\draft\Documents\GitHub\LabJack-c\basic\write_read_loop_with_config.c(15,9): warning C4101:  'dacVolt': unreferenced local variable
-C:\Users\draft\Documents\GitHub\LabJack-c\basic\write_read_loop_with_config.c(11,6): warning C4101:  'i': unreferenced local variable
-C:\Users\draft\Documents\GitHub\LabJack-c\basic\write_read_loop_with_config.c(16,6): warning C4101:  'fioState': unreferenced local variable
-  LINK : C:\Users\draft\Documents\GitHub\LabJack-c\visual_studio_2008\basic\write_read_loop_with_config\Debug\write_read_loop_with_config.exe not found or not built by the last incremental link; performing full link
+﻿  LINK : C:\Users\draft\Documents\GitHub\LabJack-c\visual_studio_2008\basic\write_read_loop_with_config\Debug\write_read_loop_with_config.exe not found or not built by the last incremental link; performing full link
 write_read_loop_with_config.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   write_read_loop_with_config.vcxproj -> C:\Users\draft\Documents\GitHub\LabJack-c\visual_studio_2008\basic\write_read_loop_with_config\Debug\write_read_loop_with_config.exe

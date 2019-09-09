@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29209.62
+VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "write_read_loop_with_config", "write_read_loop_with_config.vcxproj", "{2D691FF2-8467-404B-809E-FE7D24510FB2}"
 EndProject
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {744ADD58-AB12-4D10-8C80-E398668CD223}
+		SolutionGuid = {423AFE7D-C553-4485-A847-D2E2E1B13838}
 	EndGlobalSection
 EndGlobal
